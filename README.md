@@ -35,17 +35,17 @@ To write and execute Assembly Language Programs to perform arithmetic operations
 
 ```asm
 CODE SEGMENT
-ASSUME CS:CODE, DS:CODE
+ASSUME CS: CODE, DS: CODE
 ORG 1000H
 MOV CL,00H
 MOV AX,1234H
-MOV BX,1234H
+MOV BX,124H
 ADD AX,BX
 JNC L1
 INC CL
 L1:MOV SI,1200H
-MOV [SI],AX
-MOV [SI+2],CL
+MOV [SI], AX
+MOV [SI+2], CL
 MOV AH,4CH
 INT 21H
 CODE ENDS
@@ -54,19 +54,22 @@ END
 
 #### Output Table
 
-| MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
+| MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) 
 | ----------------------- | ------------------------ |
-|       1200🔢       01         12
-
-|         1200                    |
+|       1200              |             58
+|                         |
+|       1201              |              13
 
 #### Manual Calculations
 
-(Add your calculation here)
+<img width="1541" height="969" alt="image" src="https://github.com/user-attachments/assets/1f081c74-7550-4382-9e99-c687e5ed7dca" />
+
 
 ---
 
 ## OUTPUT IMAGE FROM MASM SOFTWARE
+<img width="639" height="186" alt="image" src="https://github.com/user-attachments/assets/a68f56c7-5d71-498f-bec3-4975981efd6a" />
+
 
 ## 2. SUBTRACTION
 
@@ -88,16 +91,15 @@ END
 CODE SEGMENT
 ASSUME CS: CODE, DS: CODE
 ORG 1000H
-MOV SI,2000H
 MOV CL,00H
-MOV AX,[SI]
-MOV BX,[SI+02H]
+MOV AX,1234H
+MOV BX,124H
 SUB AX,BX
 JNC L1
 INC CL
-L1:
-MOV [SI+04H],AX
-MOV [SI+06H],CL
+L1:MOV SI,1200H
+MOV [SI], AX
+MOV [SI+2], CL
 MOV AH,4CH
 INT 21H
 CODE ENDS
@@ -109,16 +111,21 @@ END
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
-
+|         1200            |         10               |
+|         1201            |         11               |
+|         1202            |         00               |
+|
 #### Manual Calculations
 
-(Add your calculation here)
+<img width="1600" height="1075" alt="image" src="https://github.com/user-attachments/assets/bd2a1553-db61-4a49-86d3-abc42a182d05" />
+
 
 ---
 
 
 ## OUTPUT SCREEN FROM MASM SOFTWARE
+<img width="635" height="148" alt="image" src="https://github.com/user-attachments/assets/c9773f8c-f928-4668-941f-681b0e993589" />
+
 
 ## 3. MULTIPLICATION
 
@@ -158,15 +165,26 @@ END
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
+|        1201:34          |          68:1205
+|        1202:12          |          00:1206
+|        1203:34          |          c4:1207
 
 #### Manual Calculations
+<img width="1005" height="557" alt="image" src="https://github.com/user-attachments/assets/6c95ac88-1598-4ad6-926d-f4f72f861914" />
 
-(Add your calculation here)
+
+
+
+
 
 ---
 
 ## OUTPUT SCREEN FROM MASM SOFTWARE
+<img width="639" height="176" alt="image" src="https://github.com/user-attachments/assets/2442636e-f8b1-4f44-a08a-fc9992788452" />
+
+
+
+
 
 ## 4. DIVISION
 
@@ -203,14 +221,18 @@ END
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
 | ----------------------- | ------------------------ |
-|                         |                          |
+|        1201:34          |          68:1205
+|        1202:12          |          00:1206
+|        1203:34          |          c4:1207
 
 #### Manual Calculations
+<img width="1009" height="523" alt="image" src="https://github.com/user-attachments/assets/e6a9d955-94b3-4a8b-9646-bfa090567a12" />
 
-(Add your calculation here)
 
 ---
 ## OUTPUT FROM MASM SOFTWARE
+<img width="635" height="172" alt="image" src="https://github.com/user-attachments/assets/06d26d1c-59e7-47d6-a2b0-a0a15e2dae7a" />
+
 
 
 
